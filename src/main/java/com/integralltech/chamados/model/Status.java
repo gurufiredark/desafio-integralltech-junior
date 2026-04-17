@@ -2,7 +2,7 @@ package com.integralltech.chamados.model;
 
 public enum Status {
     ABERTO,
-    EM_ANDAMENTO,
+    EM_ATENDIMENTO,
     RESOLVIDO,
-    FECHADO
+    CANCELADO
 }
