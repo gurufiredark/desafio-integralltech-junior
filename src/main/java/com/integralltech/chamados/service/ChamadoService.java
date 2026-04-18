@@ -2,6 +2,7 @@ package com.integralltech.chamados.service;
 
 import com.integralltech.chamados.dto.ChamadoRequestDTO;
 import com.integralltech.chamados.dto.ChamadoResponseDTO;
+import com.integralltech.chamados.dto.ChamadoUpdateDTO;
 import com.integralltech.chamados.exception.BusinessException;
 import com.integralltech.chamados.exception.ChamadoNotFoundException;
 import com.integralltech.chamados.model.Chamado;
@@ -48,12 +49,12 @@ public class ChamadoService {
         return ChamadoResponseDTO.fromEntity(chamado);
     }
 
-    public ChamadoResponseDTO atualizar(Long id, ChamadoRequestDTO dto) {
+    public ChamadoResponseDTO atualizar(Long id, ChamadoUpdateDTO dto) {
         Chamado chamado = repository.findById(id)
                 .orElseThrow(() -> new ChamadoNotFoundException(id));
 
         if (chamado.getStatus() == Status.CANCELADO || chamado.getStatus() == Status.RESOLVIDO) {
-            throw new BusinessException("Nao e possivel atualizar um chamado " + chamado.getStatus());
+            throw new BusinessException("Nao e possivel atualizar um chamado com status " + chamado.getStatus());
         }
 
         chamado.setTitulo(dto.titulo());
@@ -61,6 +62,11 @@ public class ChamadoService {
         chamado.setSetor(dto.setor());
         chamado.setPrioridade(dto.prioridade());
         chamado.setSolicitante(dto.solicitante());
+        chamado.setStatus(dto.status());
+
+        if (dto.status() == Status.RESOLVIDO || dto.status() == Status.CANCELADO) {
+            chamado.setDataFechamento(LocalDateTime.now());
+        }
 
         return ChamadoResponseDTO.fromEntity(repository.save(chamado));
     }
