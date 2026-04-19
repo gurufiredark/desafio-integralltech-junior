@@ -14,19 +14,19 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+
 @Service
 public class IaService {
 
     private final ChamadoRepository repository;
     private final ChatClient chatClient;
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
 
     public IaService(ChamadoRepository repository,
-                     ChatClient.Builder chatClientBuilder,
-                     ObjectMapper objectMapper) {
+                     ChatClient.Builder chatClientBuilder) {
         this.repository   = repository;
         this.chatClient   = chatClientBuilder.build();
-        this.objectMapper = objectMapper;
     }
 
     public AnaliseIaResponseDTO analisar(Long id) {
