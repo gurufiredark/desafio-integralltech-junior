@@ -12,8 +12,6 @@ O **Service** centraliza todas as regras de negócio — validação de status, 
 
 O **Repository** cuida exclusivamente do acesso ao banco via Spring Data JPA, sem lógica extra.
 
-Essa separação também facilita responder a perguntas como "o que acontece se eu precisar trocar o banco de dados?" — só o Repository seria afetado.
-
 ---
 
 ## 2. Uso de DTOs
