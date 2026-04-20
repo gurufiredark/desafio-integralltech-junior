@@ -54,6 +54,45 @@ A aplicação estará disponível em `http://localhost:8080`.
 
 ---
 
+### Alternativa: rodando pela IDE
+
+Se preferir usar a IDE em vez do terminal, tanto VS Code quanto IntelliJ têm suporte nativo para Spring Boot.
+
+#### VS Code — Spring Boot Dashboard
+
+1. Instale a extensão **[Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)** (ela inclui o Spring Boot Dashboard)
+2. Com o projeto aberto, clique no ícone do Spring Boot na barra lateral (Spring Boot Dashboard)
+3. Seu projeto aparecerá listado — clique no ▶️ ao lado do nome para subir
+4. Para passar a variável de ambiente, crie um arquivo `.env` na raiz **ou** configure em `.vscode/launch.json`:
+
+```json
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot",
+      "request": "launch",
+      "mainClass": "com.integralltech.chamados.ChamadosApplication",
+      "env": {
+        "GROQ_API_KEY": "sua_chave_aqui"
+      }
+    }
+  ]
+}
+```
+
+#### IntelliJ IDEA
+
+1. Abra o projeto normalmente (**File > Open**)
+2. O IntelliJ detecta automaticamente a classe `main` anotada com `@SpringBootApplication` e cria uma Run Configuration
+3. Para adicionar a variável de ambiente, vá em **Run > Edit Configurations**, selecione a configuração do projeto e preencha o campo **Environment variables**:
+```
+   GROQ_API_KEY=sua_chave_aqui
+```
+4. Clique no ▶️ verde no canto superior direito (ou `Shift + F10`) para rodar
+
+---
+
 ## Endpoints disponíveis
 
 | Método | Rota | Descrição |
