@@ -89,7 +89,7 @@ Se preferir usar a IDE em vez do terminal, tanto VS Code quanto IntelliJ têm su
 ```
    GROQ_API_KEY=sua_chave_aqui
 ```
-4. Clique no ▶️ verde no canto superior direito (ou `Shift + F10`) para rodar
+4. Clique no ▶️ (símbolo de play) no canto superior direito (ou `Shift + F10`) para rodar
 
 ---
 
