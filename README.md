@@ -1,6 +1,6 @@
-# Sistema de Chamados Técnicos — IntegrAllTech
+# Sistema de Chamados Técnicos
 
-API REST para gerenciamento de chamados de suporte técnico, desenvolvida com Java + Spring Boot como parte do processo seletivo IntegrAllTech 2026.
+API REST para gerenciamento de chamados de suporte técnico, desenvolvida com Java + Spring Boot.
 
 ## Tecnologias
 
@@ -24,8 +24,8 @@ API REST para gerenciamento de chamados de suporte técnico, desenvolvida com Ja
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/desafio-integralltech-junior.git
-cd desafio-integralltech-junior
+git clone https://github.com/gurufiredark/api-chamados-tecnico-ia.git
+cd api-chamados-tecnico-ia
 ```
 
 ### 2. Configure a chave da IA
